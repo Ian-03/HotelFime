@@ -1,0 +1,203 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins';
+    background-color: rgb(230, 230, 230);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*Navbar*/
+
+label.logo {
+    color: #fff;
+    font-size: 35px;
+    padding: 0 0 0 130px;
+    line-height: 80px;
+}
+
+nav {
+    background-color: #000;
+    width: 100%;
+    height: 80px;
+}
+
+nav ul {
+    float: right;
+}   
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 3px;
+}
+
+nav ul li a:hover:not(.active){
+    background-color: #6d6d6d;
+}
+
+nav img{
+    float: right;
+    width: 40px;
+    margin: 20px 15px;
+    
+}
+
+.active {
+    background-color: #3d3d3d;
+}
+
+.bars {
+    display: none;
+}
+
+@media (max-width: 995px){
+    nav ul li{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+    
+    .bars {
+        display: block;
+    }
+}
+
+/*Contenido home*/
+
+.home {
+    height: calc(100vh - 80px);
+    flex-direction: column;
+    color: #fff;
+}
+
+.home h1 {
+    margin-bottom: 30px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.home p {
+    font-size: 25px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-black {
+    background-color: #000;
+    color:#fff;
+    border-radius: 7px;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+/*Habitaciones*/
+
+.container {
+    padding: 15px 5%;
+}
+
+.container .title {
+    margin: 15px 0 40px 0;
+}
+
+.container .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.container .box-container .box {
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 15px;
+}
+
+.container .box-container .box:hover:not(.flex){
+    background-color: #d1d1d1;
+    opacity: .6;
+}
+
+.container .box-container .box img {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px 15px 0 0;
+}
+
+.container .box-container .box .text{
+    padding: 10px 25px;
+}
+
+.container .box-container .box .text h2{
+    margin-bottom: 15px;
+}
+
+.container .box-container .box .text p{
+    margin: 15px 0;
+}
+
+/*Reservaciones*/
+
+.container .box-container .flex{
+    display: flex;
+}
+
+.container .box-container .flex img{
+    width: 40%;
+    height:auto;
+    border-radius: 15px 0 0 15px;
+}
+
+.container .box-container .flex .button-modify{
+    display: flex;
+    justify-content: center;
+}
+
+.container .box-container .flex .text button {
+    margin: 5px 0;
+    padding: 10px;
+    justify-content: right;
+}
+
+/*Contacto*/
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.container-contacto {
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px;
+    padding: 30px 50px;
+    margin: 0 10px;
+}
+
+.container-contacto h1{
+    text-align: center;
+}
+.container-contacto svg {
+    width: 50px;
+    margin-top: 30px;
+}
