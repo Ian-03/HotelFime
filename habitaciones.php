@@ -26,6 +26,10 @@
     </nav>
     <div class="container">
         <h1 class="title">Habitaciones</h1>
+        <?php if(!isset($_SESSION["user_id"])){
+            echo '<h2 style="margin-bottom: 20px">Inicia Sesión para poder hacer una reserva</h2>';
+        }
+        ?>   
         <div class="box-container">
             <?php
                 $habitaciones = array();
@@ -33,10 +37,11 @@
                 $habitaciones = getHabitaciones($pdo);
                 
                 foreach($habitaciones as $habitacion){?>
-                    <a href="">
+                    <a href="./hacer_reserva.php?idhabitacion=<?php echo $habitacion['id'];?>">
                         <div class="box">
                             <img src="<?php echo './img/cuarto' . $habitacion['id'] . '.jpg'?>" alt="Imagen del cuarto">
                             <div class="text">
+                                <h3><?php echo $habitacion['nombre']; ?></h3>
                                 <p><?php echo $habitacion['descripcion']; ?></p>
                                 <p><?php echo '$' . $habitacion['precio']; ?></p>
                             </div>
