@@ -20,3 +20,4 @@ function isEmailUsed (object $pdo, string $correo){
 function createUser(object $pdo, string $correo, string $password){
     setUser($pdo, $correo, $password);
 }
+

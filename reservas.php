@@ -27,7 +27,7 @@
     </nav>
     <div class="container">
         <h1 class="title">Reservaciones</h1>
-        <div class="box-container">
+        <div class="box-container box-reservas">
             <?php
 
                 if (isset($_SESSION["user_id"])){
@@ -38,15 +38,17 @@
                     foreach($reservas as $reserva){?>
                         
                         <div class="box flex">
+
                             <img src="<?php echo './img/cuarto' . $reserva['idHabitacion'] . '.jpg'?>" alt="Imagen del cuarto">
                             <div class="text">
                                 <h3><?php echo 'Reserva de: ' . $reserva['nombre']; ?></h3>
                                 <h4><?php echo getNombreHabitacion($pdo, $reserva['idHabitacion']) ?></h4>
                                 <p><?php echo getDescripcionHabitacion($pdo, $reserva['idHabitacion']) ?></p>
+                                <p><?php echo 'Telefono registrado: ' . $reserva['telefono'] ?></p>
                                 <h5><?php echo 'Fecha de reserva: ' . $reserva['fecha'] ?></h5>
                                 <div class="button-modify">
-                                    <a href="">
-                                        <button class="btn-black" style="margin-top: 15px;">Modificar</button>
+                                    <a href="modificar.php?idreserva=<?php echo $reserva['id'];?>">
+                                        <button class="btn-black" style="margin-top: 20px;">Modificar</button>
                                     </a>
                                 </div>
                             </div>
@@ -54,7 +56,7 @@
                     <?php
                     }   
                 }else{
-                    echo '<h2>Inica sesión para poder tus reservas </h2>';
+                    echo '<h2>Inicia Sesión para poder tus reservas </h2>';
                 }
                 ?>
         </div>
