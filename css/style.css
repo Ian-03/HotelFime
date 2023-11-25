@@ -21,6 +21,7 @@ div {
 
 .login-container {
     height: calc(100% - 80px);
+    display: inline;
 }
 
 .wrapper {
@@ -86,3 +87,4 @@ div {
 .wrapper .registro a:hover {
     text-decoration: underline;
 }
+
